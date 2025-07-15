@@ -1,0 +1,97 @@
+<div class="loginContainer ">
+    <h2>Lista Cervezas</h2>
+
+    <div class="tabla-scroll">
+        
+        <div> 
+           <div *ngIf="beerWhitEtiquetas.length> 0; else noBeers" >
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th (click)="ordenarTabla('name')">
+                                Nombre
+                                <span *ngIf="ordenarColumna === 'name'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('country')">
+                                Pais
+                                <span *ngIf="ordenarColumna === 'country'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('brew')">
+                                Cervecera
+                                <span *ngIf="ordenarColumna === 'brew'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('tipo')">
+                                Estilo
+                                 <span *ngIf="ordenarColumna === 'tipo'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('graduation')">
+                                Graduación
+                                <span *ngIf="ordenarColumna === 'graduation'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('etiquetas')">
+                                Etiquetas
+                                <span *ngIf="ordenarColumna === 'etiquetas'">
+                                    {{ordenAscendente ? '▲' : '▼' }}
+                                </span>
+                            </th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                      
+                        <tr *ngFor="let beerWhitEtiquetas of beerWhitEtiquetas;">
+                            <td>{{beerWhitEtiquetas.name}}</td>
+                            <td>{{beerWhitEtiquetas.country}}</td>
+                            <td>{{beerWhitEtiquetas.brew}}</td>
+                            <td>{{beerWhitEtiquetas.tipo}}</td>
+                            <td>{{beerWhitEtiquetas.graduation}}</td>
+                            <td>
+                                <ng-container *ngIf="editandoId === beerWhitEtiquetas.id; else mostrarEtiqueta">
+                                    <input type="number" [(ngModel)]="etiquetaEditada[beerWhitEtiquetas.id]" min="1"/>
+                                </ng-container>
+                                <ng-template #mostrarEtiqueta>
+                                    {{beerWhitEtiquetas.etiquetas}}
+                                </ng-template>
+                            </td>
+                            <td>
+                                <button class="btn btn-shadow btn-shadow--black" (click)="editarEtiquetaUser(beerWhitEtiquetas)">
+                                    <span>{{editandoId === beerWhitEtiquetas.id ? 'Guardar' : 'Editar'}}</span>
+                                </button>
+                            </td>
+                            <td>
+                                <button (click)="solicitarEliminar(beerWhitEtiquetas.id)"  class="btn btn-shadow btn-shadow--red">
+                                    <span>Eliminar</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                            
+                        
+                    </tbody>
+                </table>
+            </div>
+            <ng-template #noBeers>  
+            <div class="alert alert-info">No hay datos disponibles</div>
+            </ng-template> 
+        </div>
+    </div>
+</div>
+<div class="aviso">
+  <div *ngIf="confirmDeleted !== null" class="loginContainer">
+    <p>¿Estás seguro de que deseas eliminar la cerveza?</p>
+    <button class="btn btn-shadow btn-shadow--red" (click)="confirmarEliminar()"><span>Si</span></button>
+    <button class="btn btn-shadow btn-shadow--black" (click)="cancelarEliminar()"><span>No</span></button>
+  </div>
+</div>

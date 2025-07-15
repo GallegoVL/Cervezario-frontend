@@ -1,0 +1,167 @@
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" autocomplete="off" class="loginContainer">
+    
+    <div>
+        <h2>Registro</h2>
+
+        <input 
+        type="text" 
+        class="form-control my-2"
+        placeholder="Usuario" 
+        name="new-username" 
+        formControlName="username"
+        autocomplete="new-username"
+        >
+        <div *ngIf="registerForm.get('username')?.pending" class="text-danger">
+            Verificando usuario...
+          </div>
+          <div *ngIf="registerForm.get('username')?.hasError('usernameTaken')" class="text-danger">
+            El Usuario ya existe
+          </div>
+          <div *ngIf="registerForm.get('username')?.hasError('required') && (registerForm.get('username')?.touched || formSubmitted)" class="text-danger">
+            El Usuario no puede estar vacío
+          </div>
+      
+      </div>
+    <div>
+        <input 
+        type="password" 
+        class="form-control my-2" 
+        placeholder="Contraseña" 
+        name="new-password" 
+        formControlName="password"
+        autocomplete="new-password"
+        required>
+        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="text-danger">
+            
+            <div *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña no puede estar vacia</div>
+            
+        </div>
+    </div>
+    <div>
+        <input 
+        type="password" 
+        class="form-control my-2" 
+        placeholder="Repite Contraseña" 
+        name="password" 
+        formControlName="confirmPassword"
+        required>
+        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="text-danger">
+            
+            <div *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña no puede estar vacia</div>
+            
+        </div>
+        <div *ngIf="registerForm.hasError('noEquals') && registerForm.get('confirmPassword')?.touched" class="text-danger">
+            Las contraseñas no coinciden.
+          </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Nombre" 
+        name="name"
+        formControlName="name"
+        required>
+        <div *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)" class="text-danger">
+            <div *ngIf="registerForm.get('name')?.errors?.['required']">El nombre no puede estar vacio</div>
+        </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Apellidos" 
+        name="lastname"
+        formControlName="lastname"
+        required>
+        <div *ngIf="registerForm.get('lastname')?.invalid && (registerForm.get('lastname')?.dirty || registerForm.get('lastname')?.touched)" class="text-danger">
+            <div *ngIf="registerForm.get('lastname')?.errors?.['required']">Los apellidos no pueden estar vacios</div>
+        </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Email" 
+        name="email"
+        formControlName="email"
+        >
+            <div *ngIf="registerForm.get('email')?.pending" class="text-danger">
+            Verificando email...
+            </div>
+            <div *ngIf="registerForm.get('email')?.hasError('emailTaken')" class="text-danger">
+            El Email ya esta registrado
+            </div>
+            <div *ngIf="registerForm.get('email')?.hasError('email') || registerForm.get('email')?.hasError('pattern')" class="text-danger">
+            El Email no es valido
+            </div>
+            <div *ngIf="registerForm.get('email')?.hasError('required')&& (registerForm.get('email')?.touched || formSubmitted)" class="text-danger">
+            El Email no puede estar vacío
+            </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Telefono" 
+        name="tlf"
+        formControlName="tlf"
+        >
+            <div *ngIf="registerForm.get('tlf')?.pending" class="text-danger">
+            Verificando tlf...
+            </div>
+            <div *ngIf="registerForm.get('tlf')?.hasError('tlfTaken')" class="text-danger">
+            El Telefono ya existe
+            </div>
+            <div *ngIf="registerForm.get('tlf')?.hasError('required')&& (registerForm.get('tlf')?.touched || formSubmitted)" class="text-danger">
+            El Telefono no puede estar vacío
+            </div>
+            <div *ngIf="registerForm.get('tlf')?.hasError('minlength')" class="text-danger">
+                El Telefono debe tener entre 9 y 15 digitos
+            </div>
+            <div *ngIf="registerForm.get('tlf')?.hasError('maxlength')" class="text-danger">
+                El Telefono debe tener entre 9 y 15 digitos
+            </div>
+            <div *ngIf="registerForm.get('tlf')?.hasError('notNumeric')" class="text-danger">
+            El telefono solo puede contener números
+            </div>
+    </div>
+    <div>
+        <input 
+        type="text"
+        class="form-control my-2" 
+        placeholder="AAAA-MM-DD"
+        name="date"
+        formControlName="date"
+        >
+        <div *ngIf="registerForm.get('date')?.errors && (registerForm.get('date')?.touched || formSubmitted)" class="text-danger">
+        <div *ngIf="registerForm.get('date')?.errors?.['required']"></div>
+        <div *ngIf="registerForm.get('date')?.errors?.['dateError']">
+        {{ registerForm.get('date')?.errors?.['dateError'] }}
+        </div>
+        </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Pais" 
+        name="country"
+        formControlName="country"
+        required>
+        <div *ngIf="registerForm.get('country')?.invalid && (registerForm.get('country')?.dirty || registerForm.get('country')?.touched)" class="text-danger">
+            <div *ngIf="registerForm.get('country')?.errors?.['required']">El Pais no puede estar vacio</div>
+        </div>
+    </div>
+    <div>
+        <button 
+        [disabled]="registerForm.invalid || dateError || isUsernameTaken() || isTlfTaken() || isEmailTaken()"
+        type="submit" 
+        class="btn btn-shadow btn-shadow--black">
+        <span>Registrarse</span>
+        </button>
+
+    </div>
+</form>
+</div>

@@ -1,0 +1,114 @@
+<div class="centrado">
+<div class="cardContainer">
+<!--class="row justify-content-center"-->
+    <!--- class="col-4 d-flex justify-content-center"-->
+    <div>
+        <div class="content">
+            <table>
+            <thead>
+                <tr>
+                    <th>Nº Cervezas </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{cantidad}}</td>
+                </tr>
+                      
+            </tbody>
+            </table>     
+        </div>  
+    </div>
+    
+    <div ><!--class="col-4 d-flex justify-content-center" en todos los div-->
+        <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nº Etiquetas </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{cantidadEtiquetas}}</td>
+                </tr>
+                      
+            </tbody>
+        </table>  
+        </div>  
+    </div>
+    <div  [style.backgroundImage]="'url(' + getFlagUrl() + ')'">
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top paises</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let paises of paises; let a=index">
+                            <td>{{a + 1}}</td>
+                            <td>{{paises.country}}</td>
+                             <td>{{paises.count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div >
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top Grados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let beer of beerGraduation; let i=index">
+                            <td>{{i + 1}}</td>
+                            <td>{{beer.name}}</td>
+                            <td>{{beer.graduation}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div >
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top etiquetas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let beer of beerEtiquetas; let a=index">
+                            <td>{{a + 1}}</td>
+                            <td>{{beer.name}}</td>
+                            <td>{{beer.etiquetas}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div  [style.backgroundImage]="'url(' + getBrewImg() + ')'">
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top cervecerias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let brew of brew; let a=index">
+                            <td>{{a + 1}}</td>
+                            <td>{{brew.brew}}</td>
+                             <td>{{brew.count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,98 @@
+<h2>Añadir cerveza a la base de datos</h2>
+<form (ngSubmit)="onSubmit(beerForm)" #beerForm="ngForm">
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Nombre" 
+        name="name" 
+        [(ngModel)]="InpBeer.name"
+        #name="ngModel"
+        required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+            @if(name.errors!["required"]){
+            <div>El Nombre no puede estar vacio</div>
+            }
+        </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Pais" 
+        name="country" 
+        [(ngModel)]="InpBeer.country"
+        #country="ngModel"
+        required>
+        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="text-danger">
+            @if(country.errors!["required"]){
+            <div>El Pais no puede estar vacio</div>
+            }
+        </div>
+    </div>
+    <div>
+        <input 
+        type="text"
+        class="form-control my-2" 
+        placeholder="Cervecera" 
+        name="brew" 
+        [(ngModel)]="InpBeer.brew"
+        #brew="ngModel"
+        required>
+        <div *ngIf="brew.invalid && (brew.dirty || brew.touched)" class="text-danger">
+            @if(brew.errors!["required"]){
+            <div>La Cervecera no puede estar vacia</div>
+            }
+        </div>
+    </div>
+    <div>
+        <input 
+        type="text" 
+        class="form-control my-2" 
+        placeholder="Estilo" 
+        name="tipo" 
+        [(ngModel)]="InpBeer.tipo"
+        #tipo="ngModel"
+        required>
+        <div *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)" class="text-danger">
+            @if(tipo.errors!["required"]){
+            <div>El Estilo no puede estar vacio</div>
+            }
+        </div>
+    </div>
+    <div>
+        <input 
+        type="number" 
+        class="form-control my-2" 
+        placeholder="Graduación" 
+        name="graduation" 
+        [(ngModel)]="InpBeer.graduation"
+        #graduation="ngModel"
+        required min="0" max="100">
+        <div *ngIf="graduation.invalid && (graduation.dirty || graduation.touched)" class="text-danger">
+            @if(graduation.errors!["required"]){
+                <div>La Graduación no puede estar vacia</div>
+            }
+            @if(graduation.errors!["min"] || graduation.errors!["max"]){
+            <div>Inserte una graduacion valida</div>
+            }
+            
+        </div>
+    </div>
+    <div>
+        <button 
+        [disabled]="!beerForm.form.valid"
+        type="submit" 
+        class="btn btn-shadow btn-shadow--black my-0 mx-0">
+        <span>{{InpBeer.id>0? "Editar": "Añadir"}}</span>
+        </button>
+        
+        <button 
+        type="button" 
+        class="btn btn-shadow btn-shadow--green my-0 mx-0" 
+        (click)="clean()">
+         <span>Limpiar Formulario</span>
+        </button>
+
+    </div>
+</form>

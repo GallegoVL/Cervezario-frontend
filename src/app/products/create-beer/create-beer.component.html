@@ -1,0 +1,81 @@
+<div >
+<div class="loginContainer">
+            <product-form (newBeerEvent)="addBeer($event)" [InpBeer]="beerSelected"></product-form>
+</div>
+<div class="loginContainer">
+            <div *ngIf="beer.length> 0; else noBeers" class="tabla-scroll">
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th (click)="ordenarTabla('name')">
+                                Nombre
+                                <span *ngIf="ordenarColumna === 'name'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('country')">
+                                Pais
+                                <span *ngIf="ordenarColumna === 'country'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('brew')">
+                                Cervecera
+                                <span *ngIf="ordenarColumna === 'brew'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('tipo')">
+                                Estilo
+                                 <span *ngIf="ordenarColumna === 'tipo'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                            <th (click)="ordenarTabla('graduation')">
+                                Graduación
+                                <span *ngIf="ordenarColumna === 'graduation'">
+                                    {{ordenAscendente ? '▲' : '▼'}}
+                                </span>
+                            </th>
+                           
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <tr *ngFor="let beer of beer; trackBy: trackById">
+                            <td>{{beer.name}}</td>
+                            <td>{{beer.country}}</td>
+                            <td>{{beer.brew}}</td>
+                            <td>{{beer.tipo}}</td>
+                            <td>{{beer.graduation}}</td>
+                            <td>
+                                <button (click) = "onUpdateBeer(beer)" class="btn btn-shadow btn-shadow--black">
+                                    <span>Editar</span>
+                                </button>
+                            </td>
+                            <td>
+                                <button (click)="solicitarEliminar(beer.id)" class="btn btn-shadow btn-shadow--red">
+                                    <span>Eliminar</span></button>
+                            </td>
+                        </tr>
+
+                            
+                        
+                    </tbody>
+                </table>
+            </div>
+            <ng-template #noBeers>  
+            <div class="alert alert-info">No hay datos disponibles</div>
+            </ng-template> 
+        </div>
+</div>
+<div class="aviso">
+    <div *ngIf="confirmDeleted !== null" class="loginContainer">
+        <p>¿Estás seguro de que deseas eliminar la cerveza?</p>
+        <button class="btn btn-shadow btn-shadow--red" (click)="confirmarEliminar()"><span>Si</span></button>
+        <button class="btn btn-shadow btn-shadow--black" (click)="cancelarEliminar()"><span>No</span></button>
+    </div>
+</div>

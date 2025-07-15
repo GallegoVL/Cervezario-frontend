@@ -1,0 +1,22 @@
+<div class="d-flex align-items-center justify-content-center ">
+    <div class="loginContainer">
+        <div>
+            <label for="asunto">Asunto: </label>
+            <select [(ngModel)]="selectedSubject" name="subject">
+                <option value="Añadir cerveza"> Añadir cerveza</option>
+                <option value="Problema con los datos de usuario"> Problema con los datos de usuario</option>
+                <option value="Problema con la aplicacion"> Problema con la aplicacion</option>
+            </select>
+        </div>
+        <div style="width: 100%;">
+            <textarea [(ngModel)]="emailText" name="mensaje" rows="10" placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        <div>
+            <button (click)="onSend()" class="btn btn-shadow btn-shadow--black">
+                <span>
+                    Enviar
+                </span>
+            </button>
+        </div>
+    </div>
+</div>

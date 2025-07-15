@@ -1,0 +1,123 @@
+td {
+  padding-right: 20px; 
+}
+th{
+  color: #fff;
+}
+
+.centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ocupa toda la pantalla */
+}
+.cardContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+  
+
+  
+  >div{
+    flex: 0 0 100px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #000000;
+    position: relative;
+    overflow: hidden;
+    min-width: 100px;
+    height: 400px;
+
+    
+    &:nth-of-type(1){
+      background-image: url('/assets/img/beer2.jpg');
+      background-size: cover;
+      
+    }
+    &:nth-of-type(2){
+      background-image: url('/assets/img/lab2.jpg');
+      background-size: cover;
+    }
+    &:nth-of-type(3){
+      background-size: cover;
+      background-position: center center;
+    }
+    &:nth-of-type(4){
+      background: linear-gradient(135deg, #000000, #c0392b);
+      background-size: cover;
+    }
+    &:nth-of-type(5){
+      background-image: url('/assets/img/bot.jpg');
+      background-size:cover;
+      background-position: center center;
+      
+    }
+    &:nth-of-type(6){
+      background-size: cover;
+      background-position: center center;
+    }
+
+     .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 1;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.676) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 300px;
+      box-shadow: 1px 3px 15px #3d3b41;
+      transform: translateY(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translateY(0%);
+      visibility: visible;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    justify-content: center;
+  }
+
+  .cardContainer > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cardContainer > div .content {
+    opacity: 1;
+    transform: translateY(0%);
+    visibility: visible;
+    position: relative;
+    background: rgba(2, 2, 46, 0.5);
+  }
+}

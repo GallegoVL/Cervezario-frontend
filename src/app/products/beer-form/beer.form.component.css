@@ -1,0 +1,15 @@
+h2{
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+.btn-shadow span {  
+    display: inline-block;  
+    transform-style: preserve-3d;  
+    transition: 0.3s ease-out; 
+    padding: 8px 16px;  
+    border-radius: 2em;  
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 2;  
+    will-change: transform, filter;
+} 

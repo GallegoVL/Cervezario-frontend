@@ -1,0 +1,21 @@
+.dropdown-item {
+  cursor: pointer;
+}
+h2{
+    margin-bottom: 50px;
+    white-space: nowrap;
+}
+.btn-shadow span {  
+    display: inline-block;  
+    transform-style: preserve-3d;  
+    transition: 0.3s ease-out; 
+    padding: 4px 12px;  
+    border-radius: 2em;  
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;  
+    z-index: 2;  
+    will-change: transform, filter;
+} 
+
+

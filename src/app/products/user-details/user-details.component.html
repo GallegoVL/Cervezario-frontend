@@ -1,0 +1,37 @@
+
+<div class="d-flex align-items-center justify-content-center ">
+   
+    <div *ngIf = "userActive" class="loginContainer" >
+         <h2 >Datos de {{userActive.username}}</h2>
+        <div class="fontDetails">
+        <div>
+            <p><strong>Nombre de Usuario:</strong> {{userActive.username}}</p>
+        </div>
+        <div>
+            <p><strong>Nombre:</strong> {{userActive.name}}</p>
+        </div>
+        <div>
+            <p><strong>Apellidos:</strong> {{userActive.lastname}}</p>
+        </div>
+        <div>
+            <p><strong>Fecha de Nacimiento:</strong> {{userActive.date | date:'yyyy-MM-dd'}}</p>
+        </div>
+        <div>
+            <p><strong>Email:</strong> {{userActive.email}}</p>
+        </div>
+        <div>
+            <p><strong>Teléfono</strong> {{userActive.tlf}}</p>
+        </div>
+        <div>
+            <p><strong>Dirección:</strong> {{userActive.country}}</p>
+        </div>
+        <div>
+            <button
+                class="btn btn-shadow btn-shadow--black"
+                [routerLink]="['/editUser']">
+                <span>Editar</span>
+            </button>
+        </div>
+        </div>
+    </div>
+</div>

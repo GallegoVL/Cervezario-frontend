@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+    <img src="assets/img/cervezario1.png" alt="Logo" class="logo"/>
+    <a class="navbar-brand nav-link" [routerLink]="'/paginaPrincipal'">Cervezario</a>
+    <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>    
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="'/paginaPrincipal'">Inicio</a>
+            </li>
+            <li class="nav-item dropdown" >
+                <a 
+                class="nav-link dropdown-toggle" 
+                id="miColeccionDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">Mi Coleccion
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="miColeccionDropdown">
+                    <li><a class="dropdown-item" [routerLink]="'/product'">Coleccion</a></li>
+                     <li><a class="dropdown-item" [routerLink]="'/userAddBeer'">Agregar Cerveza</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" [class.disabled]="!isAdmin">
+                <a 
+                class="nav-link dropdown-toggle" 
+                id="miColeccionDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+                [attr.aria-disabled]="!isAdmin"
+                [class.disabled]="!isAdmin"
+                [style.pointer-events]="isAdmin ? 'auto':'none'">Cervezas
+                </a>
+                
+                <ul class="dropdown-menu" aria-labelledby="miColeccionDropdown">
+                    <li><a class="dropdown-item" [routerLink]="'/crearCerveza'">Crear cerveza</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="'/userContact'">Contacto</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="miCuentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
+                <ul class="dropdown-menu" aria-labelledby="miCuentaDropdown">
+                    <li><a class="dropdown-item" [routerLink]="'/userdetails'">Mis Datos</a></li>
+                    <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>

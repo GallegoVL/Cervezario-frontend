@@ -1,0 +1,56 @@
+<div class="loginContainer">
+    <div>
+        <label>Cerveza:</label> 
+        <input type="text" [formControl]="searchControl" placeholder="Buscar..."> 
+        <label>Pais:</label> 
+        <input type="text" [formControl]="searchCountryControl" placeholder="Buscar..."> 
+    </div>
+    
+    <div class="tabla-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                    Nombre
+                    </th>
+                    <th>
+                    Pais
+                    </th>
+                    <th >
+                    Cervecera
+                    </th>
+                    <th >
+                    Estilo
+                    </th>
+                    <th>
+                    Graduación
+                    </th>
+                    <th>
+                    Etiquetas
+                    </th>
+                    <th>
+                    Añadir
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngIf="results.length > 0">
+                <tr *ngFor="let beer of results">
+                    <th>{{beer.name}}</th>
+                    <th>{{beer.country}}</th>
+                    <th>{{beer.brew}}</th>
+                    <th>{{beer.tipo}}</th>
+                    <th>{{beer.graduation}}</th>
+                    <th>
+                        <input type="number" [formControl]="etiquetasControl" min="1" name="etiquetas">
+                    </th>
+                    <th>
+                        <button class="btn btn-shadow btn-shadow--black" (click) = "addBeerToColection(beer)">
+                            <span>Añadir</span>
+                        </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>

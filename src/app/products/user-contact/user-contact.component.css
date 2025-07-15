@@ -1,0 +1,13 @@
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;        /* Asegura que pueda expandirse */
+  padding: 1rem;      /* Evita que toque los bordes */
+  box-sizing: border-box;
+}
+
+.loginContainer {
+  width: 100%;
+  max-width: 900px;
+}
