@@ -51,19 +51,19 @@ Este proyecto backend ofrece una API para manejar cervezas, usuarios, roles y en
 
 ## Configuración
 
-  src/main/resources/application.properties
+1. - src/main/resources/application.properties
 
-  spring.mail.host=smtp.gmail.com
-  spring.mail.port=587
-  spring.mail.username=tu-email@gmail.com
-  spring.mail.password=tu-contraseña
-  spring.mail.properties.mail.smtp.auth=true
-  spring.mail.properties.mail.smtp.starttls.enable=true
+2. - spring.mail.host=smtp.gmail.com
+   - spring.mail.port=587
+   - spring.mail.username=tu-email@gmail.com
+   - spring.mail.password=tu-contraseña
+   - spring.mail.properties.mail.smtp.auth=true
+   - spring.mail.properties.mail.smtp.starttls.enable=true
 
 ## Ejecución
 
-   mvn spring-boot:run
-   La API estará disponible en http://localhost:8080.
+   - mvn spring-boot:run
+   - La API estará disponible en http://localhost:8080.
 
 ## Contacto
 
