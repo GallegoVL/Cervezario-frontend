@@ -68,7 +68,7 @@ Este proyecto backend ofrece una API para manejar cervezas, usuarios, roles y en
 ## Contacto
 
   Alexandre Gallego Fernández
-  Email: alexgallegofernandez0594@gmail.com
-  GitHub: https://github.com/GallegoVL
-  Linkedin: https://www.linkedin.com/in/alexandre-gallego-fern%C3%A1ndez-564403273/
-  Telefono: +34 658 211 311
+  - Email: alexgallegofernandez0594@gmail.com
+  - GitHub: https://github.com/GallegoVL
+  - Linkedin: https://www.linkedin.com/in/alexandre-gallego-fern%C3%A1ndez-564403273/
+  - Telefono: +34 658 211 311
