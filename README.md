@@ -11,6 +11,7 @@ Aplicación web en Angular que permite explorar, buscar y gestionar cervezas. Es
 - [Configuración](#-configuración)
 - [Ejecución](#-ejecución)
 - [Construcción para producción](#️-construcción-para-producción)
+- [Licencia](#-licencia)
 - [Contacto](#-contacto)
 
 ---
@@ -76,6 +77,10 @@ El objetivo es ofrecer una experiencia amigable para explorar y gestionar datos 
 ## Construcción para producción
 
 1. ng build --configuration production
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT.
 
 ## Contacto
 
