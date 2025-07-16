@@ -42,27 +42,27 @@ Este proyecto backend ofrece una API para manejar cervezas, usuarios, roles y en
 
 1. Clonar el repositorio:
 
-   git clone https://github.com/GallegoVL/Cervezario-backend.git
-   cd Cervezario-backend
+   - git clone https://github.com/GallegoVL/Cervezario-backend.git
+   - cd Cervezario-backend
 
 2. Construir el proyecto con Maven:
 
-   mvn clean install
+   - mvn clean install
 
 ## Configuración
 
 1. Edita el archivo:
   
-   src/main/resources/application.properties
+   - src/main/resources/application.properties
 
 2. Tus datos de correo:
    
-   spring.mail.host=smtp.gmail.com
-   spring.mail.port=587
-   spring.mail.username=tu-email@gmail.com
-   spring.mail.password=tu-contraseña
-   spring.mail.properties.mail.smtp.auth=true
-   spring.mail.properties.mail.smtp.starttls.enable=true
+   - spring.mail.host=smtp.gmail.com
+   - spring.mail.port=587
+   - spring.mail.username=tu-email@gmail.com
+   - spring.mail.password=tu-contraseña
+   - spring.mail.properties.mail.smtp.auth=true
+   - spring.mail.properties.mail.smtp.starttls.enable=true
 
 ## Ejecución
 
