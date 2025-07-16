@@ -1,59 +1,74 @@
-# AngularApp
+# Cervezario Backend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+API REST desarrollada con Spring Boot para la gestión de cervezas, usuarios y envío de emails.
 
-## Development server
+## Tabla de contenidos
 
-To start a local development server, run:
+- [Descripción](#descripción)
+- [Tecnologías](#tecnologías)
+- [Características](#características)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Ejecución](#ejecución)
+- [Endpoints principales](#endpoints-principales)
+- [Contribuir](#contribuir)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
 
-```bash
-ng serve
-```
+- ## Descripción
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Este proyecto backend ofrece una API para manejar cervezas, usuarios, roles y envío de correos electrónicos. Está desarrollado en Java con Spring Boot y se utiliza para la aplicación Cervezario.
 
-## Code scaffolding
+## Tecnologías
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Java 17
+- Spring Boot 3.x
+- Maven
+- JPA / Hibernate
+- H2 (para pruebas en local, cambiar a base de datos real para producción)
+- Spring Security
+- JavaMailSender
 
-```bash
-ng generate component component-name
-```
+## Características
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Gestión CRUD de cervezas
+- Registro y autenticación de usuarios
+- Gestión de roles y permisos
+- Envío de correos electrónicos asíncrono
+- Validaciones personalizadas
+- Seguridad con JWT
 
-```bash
-ng generate --help
-```
+## Instalación
 
-## Building
+1. Clonar el repositorio:
 
-To build the project run:
+   git clone https://github.com/GallegoVL/Cervezario-backend.git
+   cd Cervezario-backend
 
-```bash
-ng build
-```
+2. Construir el proyecto con Maven:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   mvn clean install
 
-## Running unit tests
+## Configuración
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+  src/main/resources/application.properties
 
-```bash
-ng test
-```
+  spring.mail.host=smtp.gmail.com
+  spring.mail.port=587
+  spring.mail.username=tu-email@gmail.com
+  spring.mail.password=tu-contraseña
+  spring.mail.properties.mail.smtp.auth=true
+  spring.mail.properties.mail.smtp.starttls.enable=true
 
-## Running end-to-end tests
+## Ejecución
 
-For end-to-end (e2e) testing, run:
+   mvn spring-boot:run
+   La API estará disponible en http://localhost:8080.
 
-```bash
-ng e2e
-```
+## Contacto
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  Alexandre Gallego Fernández
+  Email: alexgallegofernandez0594@gmail.com
+  GitHub: https://github.com/GallegoVL
+  Linkedin: https://www.linkedin.com/in/alexandre-gallego-fern%C3%A1ndez-564403273/
+  Telefono: +34 658 211 311
