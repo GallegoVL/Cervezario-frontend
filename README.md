@@ -31,7 +31,7 @@ El objetivo es ofrecer una experiencia amigable para explorar y gestionar datos 
 
 ## Tecnologías
 
-- [Angular](https://angular.io/) 17+
+- [Angular](https://angular.io/) 19.2+
 - TypeScript
 - RxJS
 - Angular CLI
